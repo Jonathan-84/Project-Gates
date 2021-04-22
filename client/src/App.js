@@ -1,7 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //import TextField from '@material-ui/core/TextField';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
+import Login from './components/LoginForm';
+import Signup from './components/SignupForm';
+import Home from './pages/home'
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
@@ -26,11 +30,14 @@ const App = () => {
     <Router>
       <>
         <Navbar />
-  {/*     <Switch>
-          <Route exact path='/' component={SearchBooks} />
-          <Route exact path='/saved' component={SavedBooks} />
-          <Route component={SearchBooks} />
-  </Switch>*/}
+        <Switch>
+            <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            {/*  <Route exact path="/queue" component={Queue} />
+            <Route exact path="/favorites" component={Favorites} />
+  <Route render={() => <h1 className="title-text main-container">This Page Does Not Exist!</h1>} />*/}
+          </Switch>
       </>
     </Router>
     </ApolloProvider>

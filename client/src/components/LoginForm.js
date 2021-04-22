@@ -1,13 +1,14 @@
-// see SignupForm.js for comments
+// see Signup.js for comments
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
 
 // integrate Apollo hooks
 import { useMutation } from '@apollo/react-hooks';
 import { LOGIN_USER } from '../utils/mutations';
 
-const LoginForm = () => {
+const Login = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -40,8 +41,8 @@ const LoginForm = () => {
           }
 
           const token = data.login.token;
-           alert(token);
-         Auth.login(token);
+      //    alert(token);
+          Auth.login(token);
         } catch (err) {
           console.error(err);
           setShowAlert(true);
@@ -54,9 +55,10 @@ const LoginForm = () => {
       });
   };
 
-
-  return (
-    <>
+  
+    return (
+      <>
+      <div className='d-flex mx-auto w-50 '>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
@@ -89,12 +91,19 @@ const LoginForm = () => {
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
-          variant='success'>
+          variant='warning'>
           Submit
         </Button>
       </Form>
+
+      </div>
+      <div className='d-flex mx-auto w-50 '>
+      <p className="center">Oops, not a member yet? Sign Up Here!<br/><Link to="/signup" className="add-padding link-text bold-text">Create an Account</Link></p>
+      
+      </div>
+      
     </>
   );
 };
-
-export default LoginForm;
+  
+  export default Login;

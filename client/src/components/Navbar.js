@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-//import Jumbotron from 'react-bootstrap/Jumbotron'
-import { Nav, Modal, Tab } from 'react-bootstrap';
-
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Auth from '../utils/auth';
 
 const AppNavbar = () => {
-    const [showModal, setShowModal] = useState(false);
+   
   
     return (
       <>
@@ -15,38 +12,36 @@ const AppNavbar = () => {
       <h1 className="display-4">So You're Saying Theres a Chance!</h1>
       <p className="lead">A light tool to help keep you and your prospects on schedule.</p>
     </div>
+    <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon bg-warning"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav ml-auto">
+                    <li>
+                        <Link to="/" className="link-text text-dark m-3 p-2 border border-dark rounded bg-white fw-bold main-link">Home</Link>
+                    
+         {/*This is where the COnditional was added for the Nav*/}
+                    {Auth.loggedIn() ? (
+                <>
+                  <Link to="/fromNow" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">From Now</Link>
+                  <Link to="/systac" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">Look Ahead</Link>
+                  <Link onClick={Auth.logout}className="link-text text-dark rounded border border-dark p-2 m-3 bg-white fw-bold main-link">Logout</Link>
+                </>
+              ) : (
+                <>
+                <Link to="/login" className="link-text text-dark fw-bold m-3 border border-dark p-2 bg-white rounded add-padding main-link">Log in</Link>
+                <Link to="/signup" className="link-text text-dark fw-bold m-3 border border-dark p-2 bg-white rounded add-padding main-link"> Sign Up</Link>
+                </>
+              )}
+                </li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
     </div>
-    <Modal
-        size='lg'
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
-            <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey='login'>
-                <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey='signup'>
-                <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
       </>
       
     );

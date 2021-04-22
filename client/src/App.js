@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //import TextField from '@material-ui/core/TextField';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Login from './components/LoginForm';
 import Signup from './components/SignupForm';
 import Home from './pages/home'
+import fromNow from './pages/fromNow';
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
@@ -34,10 +36,11 @@ const App = () => {
             <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            {/*  <Route exact path="/queue" component={Queue} />
-            <Route exact path="/favorites" component={Favorites} />
-  <Route render={() => <h1 className="title-text main-container">This Page Does Not Exist!</h1>} />*/}
+             <Route exact path="/fromNow" component={fromNow} />
+            {/*<Route exact path="/SYSTAC" component={SYSTAC} />*/}
+  <Route render={() => <h1 className="title-text main-container">This Page Does Not Exist!</h1>} />
           </Switch>
+          <Footer />
       </>
     </Router>
     </ApolloProvider>

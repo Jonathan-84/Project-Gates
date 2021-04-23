@@ -1,6 +1,7 @@
-//import $ from 'jquery';
+import $ from 'jquery';
 import React, {useState} from 'react';
 //import TextField from '@material-ui/core/TextField';
+import moment from 'moment';
 
 import {
   MuiPickersUtilsProvider,
@@ -9,19 +10,23 @@ import {
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 
+
 const Systac =() => {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleDateChange = (date) => {
-    console.log(date);
     setSelectedDate(date);
+   var convertedDate = moment (date).format ('MM/DD/YYYY');
+   $("#selected-date").text(convertedDate);
+
+
   };
 
   
     return (
         <>
-
+<h2 class="display-4 text-center m-3 border-bottom border-warning">Do We Have Time</h2>
         <p className="m-3 text-md-center text-sm-left"> Using this calculator,we can determine if there is enough 
           time to meet your target date. We will chart tentative deadlines and determine
           if we have time. You must start by selecting the potential launch date, then the average time 
@@ -37,16 +42,22 @@ const Systac =() => {
 
 <MuiPickersUtilsProvider className='mx-auto' utils={DateFnsUtils}>
 
-  <KeyboardDatePicker
-    label="Material Date Picker"
-    variant="dialog"
-    value={selectedDate}
-    onChange={handleDateChange}
-  />
+<KeyboardDatePicker
+        clearable
+        value={selectedDate}
+        placeholder="10/10/2018"
+        onChange={date => handleDateChange(date)}
+        minDate={new Date()}
+        format="MM/dd/yyyy"
+      />
   
 </MuiPickersUtilsProvider>
 </div>
 </div>
+
+          <p id="selected-date" class="text-center"></p>
+          <p id="time-until" class= "text-center"></p>
+          
 
 
         </>

@@ -10,6 +10,8 @@ import {
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 
+var now = moment(new Date());
+  console.log(now);
 
 const Systac =() => {
 
@@ -18,8 +20,16 @@ const Systac =() => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
    var convertedDate = moment (date).format ('MM/DD/YYYY');
-   $("#selected-date").text(convertedDate);
+   $("#selected-date").text("Target Date: " + convertedDate);
 
+  var  timeUntil = moment (date).diff(now, 'days');
+  console.log(timeUntil);
+  if (timeUntil < 0) {
+    alert("You must always look forward, not into the past! Please select a new date.")
+  }
+  else {
+$("#time-until").text(timeUntil + " Days Until Implementation");
+}
 
   };
 
@@ -39,15 +49,13 @@ const Systac =() => {
           </h2>
 
         <div className="App mx-auto">
-
-<MuiPickersUtilsProvider className='mx-auto' utils={DateFnsUtils}>
+<br></br>
+<MuiPickersUtilsProvider className=' justify-content-center mx-auto' utils={DateFnsUtils}>
 
 <KeyboardDatePicker
-        clearable
+        placeholder="2018/10/10"
         value={selectedDate}
-        placeholder="10/10/2018"
         onChange={date => handleDateChange(date)}
-        minDate={new Date()}
         format="MM/dd/yyyy"
       />
   
@@ -55,11 +63,10 @@ const Systac =() => {
 </div>
 </div>
 
-          <p id="selected-date" class="text-center"></p>
-          <p id="time-until" class= "text-center"></p>
+          <p id="selected-date" className="text-center"></p>
+          <p id="time-until" className= "text-center"></p>
           
-
-
+          <br></br>
         </>
     );
 };

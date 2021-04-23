@@ -8,11 +8,10 @@ const AppNavbar = () => {
   
     return (
       <>
-        <div className="jumbotron jumbotron-fluid bg-warning">
+        <div className="jumbotron jumbotron-fluid bg-warning pb-4 pt-1">
     <div className="container">
-      <h1 className="display-4">So You're Saying Theres a Chance!</h1>
+      <h1 className="display-4">Exley</h1>
       <p className="lead">A light tool to help keep you and your prospects on schedule.</p>
-    </div>
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +41,7 @@ const AppNavbar = () => {
             
         </div>
     </nav>
+    </div>
     </div>
       </>
       

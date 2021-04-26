@@ -1,5 +1,5 @@
 import React from 'react';
-//import Movie from './Movie';
+
 //import { useQuery } from '@apollo/react-hooks';
 //import { GET_ME } from '../utils/queries';
 

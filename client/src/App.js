@@ -8,7 +8,9 @@ import Login from './components/LoginForm';
 import Signup from './components/SignupForm';
 import Home from './pages/home'
 import fromNow from './pages/fromNow';
-import Systac from './pages/Systac';
+//import Systac from './pages/Systac';
+//import Implementation from '../components/Implementation';
+import Future from './pages/Future';
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
@@ -38,7 +40,9 @@ const App = () => {
           <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/fromNow" component={fromNow} />
-            <Route exact path="/Systac" component={Systac} />
+            <Route exact path="/Future" component={Future} />
+      
+        
   <Route render={() => <h1 className="title-text main-container">This Page Does Not Exist!</h1>} />
           </Switch>
           <Footer />

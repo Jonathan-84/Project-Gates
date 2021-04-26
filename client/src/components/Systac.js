@@ -22,6 +22,11 @@ const Systac =() => {
    var convertedDate = moment (date).format ('MM/DD/YYYY');
    $("#selected-date").text("Target Date: " + convertedDate);
 
+   console.log(convertedDate);
+
+   var convertedChoice = moment (convertedDate, 'MM/DD/YYYY')
+   console.log(convertedChoice)
+
   var  timeUntil = moment (date).diff(now, 'days');
   console.log(timeUntil);
   if (timeUntil < 0) {
@@ -33,10 +38,11 @@ $("#time-until").text(timeUntil + " Days Until Implementation");
 
   };
 
+
   
     return (
         <>
-<h2 class="display-4 text-center m-3 border-bottom border-warning">Do We Have Time</h2>
+<h2 className="display-4 text-center m-3 border-bottom border-warning">Do We Have Time</h2>
         <p className="m-3 text-md-center text-sm-left"> Using this calculator,we can determine if there is enough 
           time to meet your target date. We will chart tentative deadlines and determine
           if we have time. You must start by selecting the potential launch date, then the average time 

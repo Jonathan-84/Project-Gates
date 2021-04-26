@@ -55,10 +55,11 @@ var currentDate1 = moment().format('MM/DD/YYYY');
       <div className="row m-3">
         <div className="m-3 d-inline-flex d-flex w-50 mx-auto">
             <div className="container col text-center border align-content-center">
+            <br />
               <Moment className="custom-text text-center fs-2 fw-bold" format='MM/DD/YYYY'>{currentDate}</Moment>
-              <br/>
-            If you signed today, when is the earliest date that our solution would be implemented?
-            <br/>
+              <br />
+         <p> If you signed today, when is the earliest date that our solution would be implemented? </p>
+         <br />
       <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center' onSubmit={this.handleSubmit}>
         <label>
           <select value={this.state.value} onChange={this.handleChange}>
@@ -73,7 +74,7 @@ var currentDate1 = moment().format('MM/DD/YYYY');
         <input type="submit" value="Submit" />
       </form>
       <br/>
-      <div className="col-6 mx=auto justify-content-center">
+      <div className="col mx=auto justify-content-center">
               <p id='future-date'></p>
                 </div>
       </div>

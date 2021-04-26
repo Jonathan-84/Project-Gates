@@ -18,6 +18,9 @@ function Footer() {
   <Nav.Item>
     <Nav.Link className="text-dark" href="https://www.linkedin.com/in/jrobinson8" target="_blank">LinkedIn</Nav.Link>
   </Nav.Item>
+  <Nav.Item>
+    <Nav.Link className="text-dark" href = "mailto:exley.deadlines@outlook.com?subject = Feedback&body = Message">Contact Exley</Nav.Link>
+  </Nav.Item>
 </Nav>
         
     )

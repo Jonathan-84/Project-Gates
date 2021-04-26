@@ -49,7 +49,7 @@ class Implementation extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <div className="col-6">
+        <div className="col">
         <p className="text-center" id='impl-deadline'></p>
           </div>
 

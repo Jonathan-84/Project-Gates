@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 //import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Auth from '../utils/auth';
 
-const AppNavbar = () => {
+
+
+
+function AppNavbar(props){
    
   
     return (
@@ -13,11 +16,11 @@ const AppNavbar = () => {
       <h1 className="display-4">Exley</h1>
       <p className="lead">A light tool to help keep you and your prospects on schedule.</p>
     <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="container">
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon bg-warning"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="container-fluid">
+        <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul className="navbar-nav ml-auto">
                     <li>
                         <Link to="/" className="link-text text-dark m-3 p-2 border border-dark rounded bg-white fw-bold main-link">Home</Link>

@@ -6,7 +6,10 @@ import React from 'react';
 import convertedDate from './Systac';
 
 
+
 class Implementation extends React.Component {
+
+
 
     constructor(props) {
       super(props);
@@ -15,7 +18,7 @@ class Implementation extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
-  
+
     handleChange(event) {
       this.setState({value: event.target.value});
     }
@@ -24,6 +27,7 @@ class Implementation extends React.Component {
   var implLength = this.state.value;
   let minusImplementation = moment({convertedDate}).subtract(implLength, 'days').format('MM/DD/YYYY');
 
+
   console.log(minusImplementation)
   $("#impl-deadline").text(' Your Deadline for starting the Implementation: ' +  minusImplementation);
   
@@ -31,7 +35,6 @@ class Implementation extends React.Component {
     }
   
 
-  
     render() {
       return (
         <>
@@ -52,7 +55,6 @@ class Implementation extends React.Component {
         <div className="col">
         <p className="text-center" id='impl-deadline'></p>
           </div>
-
           </>
       );
     }

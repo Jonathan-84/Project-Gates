@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //import TextField from '@material-ui/core/TextField';
 import 'bootstrap/dist/css/bootstrap.min.css';

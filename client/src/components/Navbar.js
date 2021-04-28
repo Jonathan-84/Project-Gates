@@ -6,7 +6,7 @@ import Auth from '../utils/auth';
 
 
 
-function AppNavbar(props){
+function AppNavbar(){
    
   
     return (
@@ -20,9 +20,9 @@ function AppNavbar(props){
         <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <div className="collapse navbar-collapse pt-3" id="navbarTogglerDemo01">
                 <ul className="navbar-nav ml-auto">
-                    <li>
+                    <li className='d-flex flex-sm-wrap'>
                         <Link to="/" className="link-text text-dark m-3 p-2 border border-dark rounded bg-white fw-bold main-link">Home</Link>
                     
          {/*This is where the COnditional was added for the Nav*/}
@@ -30,6 +30,7 @@ function AppNavbar(props){
                 <>
                   <Link to="/fromNow" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">From Now</Link>
                   <Link to="/Future" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">Look Ahead</Link>
+                  <br />
                   <Link to="/" onClick={Auth.logout}className="link-text text-dark rounded border border-dark p-2 m-3 bg-white fw-bold main-link">Logout</Link>
                 </>
               ) : (

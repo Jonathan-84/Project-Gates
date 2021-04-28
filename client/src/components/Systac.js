@@ -1,8 +1,10 @@
-import $ from 'jquery';
-import React, {useState} from 'react';
+//import $ from 'jquery';
+//import React, {useState} from 'react';
 //import TextField from '@material-ui/core/TextField';
-import moment from 'moment';
+//import moment from 'moment';
 
+//For purpose of deployed site, needed to block all of this, unblock all and remove coming soon line.
+/*
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
@@ -11,10 +13,10 @@ import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 
 var now = moment(new Date());
-  console.log(now);
+  console.log(now);*/
 
 const Systac =() => {
-
+/*
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleDateChange = (date) => {
@@ -36,8 +38,10 @@ const Systac =() => {
 $("#time-until").text(timeUntil + " Days Until Implementation");
 }
 
+
   };
 
+  */
 
   
     return (
@@ -49,7 +53,11 @@ $("#time-until").text(timeUntil + " Days Until Implementation");
         that it takes to implement the solution. Lastly, engage with your prospect 
         and gauge the average time needed for legal review. Watch those Deadlines!
         </p>
-
+        <br></br>
+        <br></br>
+      <h1 className="text-center" >Coming Soon!</h1>
+      
+{/*
         <div className="col m-3">
           <h2 className="text-center">What's your client's target date?
           </h2>
@@ -70,7 +78,7 @@ $("#time-until").text(timeUntil + " Days Until Implementation");
 </div>
 
           <p id="selected-date" className="text-center"></p>
-          <p id="time-until" className= "text-center"></p>
+<p id="time-until" className= "text-center"></p> */}
           
           <br></br>
         </>

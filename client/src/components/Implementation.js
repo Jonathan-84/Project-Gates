@@ -1,14 +1,14 @@
+/*
+
 import $ from 'jquery';
 import moment from 'moment';
 //import Form from 'react-bootstrap/Form';
 //import Moment from 'react-moment';
-import React from 'react';
-import convertedDate from './Systac';
-
+import React, {useState, useContext} from 'react';
+import { AppContext } from '../utils/AppContext';
 
 
 class Implementation extends React.Component {
-
 
 
     constructor(props) {
@@ -23,9 +23,11 @@ class Implementation extends React.Component {
       this.setState({value: event.target.value});
     }
   
+    
     handleSubmit(event) {
+
   var implLength = this.state.value;
-  let minusImplementation = moment({convertedDate}).subtract(implLength, 'days').format('MM/DD/YYYY');
+  let minusImplementation = moment().subtract(implLength, 'days').format('MM/DD/YYYY');
 
 
   console.log(minusImplementation)
@@ -35,8 +37,8 @@ class Implementation extends React.Component {
     }
   
 
-    render() {
-      return (
+    render() {*/
+     {/* return (
         <>
         <p className="text-center">How long is the Implementation?</p>
         <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center' onSubmit={this.handleSubmit}>
@@ -61,3 +63,5 @@ class Implementation extends React.Component {
   };
       
 export default Implementation;
+
+*/}

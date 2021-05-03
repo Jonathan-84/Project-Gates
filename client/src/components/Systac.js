@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import moment from 'moment';
-
+import { AppContext }  from '../utils/AppContext';
 
 import {
   MuiPickersUtilsProvider,
@@ -10,10 +10,12 @@ import {
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 
-var now = moment(new Date());
-  console.log(now);
+
 
 const Systac =() => {
+
+  const startDate = useContext(AppContext);
+  console.log(startDate);
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -27,7 +29,7 @@ const Systac =() => {
    var convertedChoice = moment (convertedDate, 'MM/DD/YYYY')
    console.log(convertedChoice)
 
-  var  timeUntil = moment (date).diff(now, 'days');
+  var  timeUntil = moment (date).diff(moment(), 'days');
   console.log(timeUntil);
   if (timeUntil < 0) {
     alert("You must always look forward, not into the past! Please select a new date.")

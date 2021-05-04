@@ -7,17 +7,19 @@ import { AppContext } from '../utils/AppContext';
 
 
 const Implementation = ()=> {
-    const startDate = useContext(AppContext)
-    console.log(startDate);
+  
+  const start = useContext(AppContext)
+console.log(start);
+
 
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const handleChange = e => {
+    const handleSubmit = e => {
         setSelectedOption(e);
       
 
-    let minusImplementation = moment(this.startDate).subtract(selectedOption, 'days').format('MM/DD/YYYY');
-console.log(startDate)
+    let minusImplementation = moment(start.selectedDate).subtract(selectedOption, 'days').format('MM/DD/YYYY');
+console.log(start.selectedDate)
 
   console.log(minusImplementation)
   $("#impl-deadline").text(' Your Deadline for starting the Implementation: ' +  minusImplementation);
@@ -28,9 +30,9 @@ console.log(startDate)
         return (
             <>
             <p className="text-center">How long is the Implementation?</p>
-            <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center' onChange= {handleChange}>
+            <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center' onSubmit= {handleSubmit}>
               <label>
-                <select value={selectedOption} onChange={handleChange}>
+                <select value={selectedOption}>
                 <option value="0"></option>
                   <option value="30">1 Month</option>
                   <option value="60">2 Months</option>
@@ -39,6 +41,7 @@ console.log(startDate)
                   <option value="270">9 Months</option>
                 </select>
               </label>
+              <input type="submit" value="Submit" />
             </form>
             <div className="col">
             <p className="text-center" id='impl-deadline'></p>

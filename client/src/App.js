@@ -30,7 +30,7 @@ const client = new ApolloClient({
 });
 
 const App = () => {
-  
+
   return (
     <ApolloProvider client={client}>
     <Router>

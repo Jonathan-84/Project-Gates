@@ -11,12 +11,9 @@ const Home = () => {
     return (
       <>
       <h1 className="display-4 text-center border-bottom border-warning">Purpose</h1>
-      <p className="text-md-center text-sm-left m-3"> The goal of any individual in customer acquisitions is to 
-        eliminate friction points. Time is often one of the greatest friction points. Why is that?
-        Well, as I always say, "you don't know what you don't know".
-        This tool was built to bring your discussions into reality. Do you really have as much
-        time as you think? Or should we start discussing our solution now? What deadlines
-        do we need to set in order to meet your target? Let's make sure we are on the same page!
+      <p className="text-md-center text-sm-left m-3"> 2 of the most common friction points in the acquistion process
+      are: Time and Money. While Exley cannot help you with Money, Exley can eliminate the friction cause by
+      Time. Exley is a light tool to help keep you and your prospects on schedule.
         </p>
       </>
     );

@@ -14,7 +14,7 @@ function AppNavbar(){
         <div className="jumbotron jumbotron-fluid bg-warning pb-4 pt-1">
     <div className="container">
       <h1 className="display-4">Exley</h1>
-      <p className="lead">A light tool to help keep you and your prospects on schedule.</p>
+      <p className="lead">Your Acqusition Deadline SideKick.</p>
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
         <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

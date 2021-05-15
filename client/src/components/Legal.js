@@ -4,49 +4,39 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
 import React, {useState} from 'react';
 //import selectedDate from "../components/Datepicker";
-import Legal from './Legal';
 
 
 
-const Implementation = (props)=> {
+const Legal = (props)=> {
   
-const startDate = props.selectedDate  
-console.log (startDate)
+const implDeadline = props.implDeadline
+console.log (implDeadline)
 
 ///now properly pulls the selected Date--- need to get it to work with the moment math
 
 
 
-    const [selectedOption, setSelectedOption] = useState('');
-    const [implDeadline, setImplDeadline] = useState('');
-   
-   // gives the Implength and not the date
-    console.log(implDeadline)
+    const [selectedLegal, setSelectedLegal] = useState('');
 
-    const handleSelect =(e)=> {
-        setSelectedOption(e);
-      console.log(selectedOption)
+    const handleLegal =(e)=> {
+        setSelectedLegal(e);
+      console.log(selectedLegal)
 
       //this capability now works- using Momentjs it subtracts the dropdown select from the date picker selection.
-    let minusImplementation = moment(startDate).subtract(selectedOption, 'days').format('MM/DD/YYYY');
-    //$("#impl-deadline").text(' Your Deadline for starting the Implementation: ' +  minusImplementation);
+    let minusLegalReview = moment(implDeadline).subtract(selectedLegal, 'days').format('MM/DD/YYYY');
+    $("#legal-deadline").text(' Your Deadline for completing Legal Review: ' +  minusLegalReview);
 
-  const convertedImpl= moment(minusImplementation, 'MM/DD/YYYY')
-  setImplDeadline(convertedImpl)
+  const convertedLReview= moment(minusLegalReview, 'MM/DD/YYYY')
 
-
-   const ImplBuffer = convertedImpl.diff(moment(), 'days');
-    console.log(ImplBuffer);
-      if
-      (ImplBuffer < 0) {
+   const LRBuffer = convertedLReview.diff(moment(), 'days');
+    console.log(LRBuffer);
+      if (LRBuffer < 0) {
         alert("We can't do it Captain! We need more time!");
-        return null;
       }
       else {
     //$("#time-until2").text(timeUntil + " Days");
-    $("#impl-deadline").text(' Your Deadline for starting the Implementation: ' +  minusImplementation);
-   // return <Legal></Legal>
-    //return ImplBuffer;
+    console.log(LRBuffer);
+    return LRBuffer;
       }
     }
     
@@ -54,14 +44,14 @@ console.log (startDate)
 
         return (
             <>
-            <p className="text-center">How long is the Implementation?</p>
+            <p className="text-center">How long is the Legal Review?</p>
             <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center'>
          
             <DropdownButton
       alignRight
       title=""
       id="dropdown-menu-align-right"
-      onSelect={handleSelect}
+      onSelect={handleLegal}
     
         >
               <Dropdown.Item eventKey="30">1 Month</Dropdown.Item>
@@ -87,14 +77,12 @@ console.log (startDate)
             </form>
 
           <div className="col">
-            <p className="text-center" id='impl-deadline'></p>
+            <p className="text-center" id='legal-deadline'></p>
               </div>
-
-              <Legal implDeadline={implDeadline} />
               </>
           );
 
 };
 
 
-export default Implementation
+export default Legal

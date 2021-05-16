@@ -16,16 +16,17 @@ console.log (startDate)
 ///now properly pulls the selected Date--- need to get it to work with the moment math
 
 
-
     const [selectedOption, setSelectedOption] = useState('');
     const [implDeadline, setImplDeadline] = useState('');
    
+    const handleSelect =(e)=> {
+      setSelectedOption(e);
+    console.log(selectedOption)
+    
    // gives the Implength and not the date
     console.log(implDeadline)
 
-    const handleSelect =(e)=> {
-        setSelectedOption(e);
-      console.log(selectedOption)
+  
 
       //this capability now works- using Momentjs it subtracts the dropdown select from the date picker selection.
     let minusImplementation = moment(startDate).subtract(selectedOption, 'days').format('MM/DD/YYYY');
@@ -40,12 +41,11 @@ console.log (startDate)
       if
       (ImplBuffer < 0) {
         alert("We can't do it Captain! We need more time!");
-        return null;
       }
       else {
     //$("#time-until2").text(timeUntil + " Days");
     $("#impl-deadline").text(' Your Deadline for starting the Implementation: ' +  minusImplementation);
-   // return <Legal></Legal>
+   return <Legal></Legal>
     //return ImplBuffer;
       }
     }
@@ -59,8 +59,9 @@ console.log (startDate)
          
             <DropdownButton
       alignRight
-      title=""
+      title="Implementation Length"
       id="dropdown-menu-align-right"
+      value={selectedOption} 
       onSelect={handleSelect}
     
         >

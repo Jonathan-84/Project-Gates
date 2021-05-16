@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 //import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Auth from '../utils/auth';
+import Logo from '../images/Logo.PNG'
+
 
 
 
@@ -13,8 +15,9 @@ function AppNavbar(){
       <>
         <div className="jumbotron jumbotron-fluid bg-warning pb-4 pt-1">
     <div className="container">
-      <h1 className="display-4">Exley</h1>
-      <p className="lead">Your Acqusition Deadline SideKick.</p>
+   
+    <img className="img-fluid w-25 h-25" src={Logo} alt="Initial Logo" />
+      <h3 className="lead d-none d-md-block">Your Acqusition Deadline SideKick.</h3>
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
         <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

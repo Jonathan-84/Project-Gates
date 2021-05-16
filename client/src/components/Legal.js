@@ -54,11 +54,11 @@ console.log (implDeadline)
       onSelect={handleLegal}
     
         >
+              <Dropdown.Item eventKey="14">2 Weeks</Dropdown.Item>
               <Dropdown.Item eventKey="30">1 Month</Dropdown.Item>
               <Dropdown.Item eventKey="60">2 Months</Dropdown.Item>
               <Dropdown.Item eventKey="90">3 Months</Dropdown.Item>
               <Dropdown.Item eventKey="180">6 Months</Dropdown.Item>
-              <Dropdown.Item eventKey="270">9 Months</Dropdown.Item>
 
       </DropdownButton>
   
@@ -77,8 +77,9 @@ console.log (implDeadline)
             </form>
 
           <div className="col">
-            <p className="text-center" id='legal-deadline'></p>
+            <p className="text-center font-weight-bold" id='legal-deadline'></p>
               </div>
+              <br></br>
               </>
           );
 

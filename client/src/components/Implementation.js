@@ -88,10 +88,11 @@ console.log (startDate)
             </form>
 
           <div className="col">
-            <p className="text-center" id='impl-deadline'></p>
+            <p className="text-center font-weight-bold" id='impl-deadline'></p>
               </div>
 
               <Legal implDeadline={implDeadline} />
+              <br></br>
               </>
           );
 

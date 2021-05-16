@@ -17,7 +17,7 @@ function AppNavbar(){
     <div className="container">
    
     <img className="img-fluid w-25 h-25" src={Logo} alt="Initial Logo" />
-      <h3 className="lead d-none d-md-block">Your Acqusition Deadline SideKick.</h3>
+      <h3 className=" lead d-none d-md-block">Your Acqusition Deadline SideKick.</h3>
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
         <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

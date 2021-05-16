@@ -7,6 +7,7 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
 } from '@material-ui/pickers';
+import { createStyles } from "@material-ui/styles";
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import Implementation from './Implementation';
@@ -42,14 +43,16 @@ const TargetDate =(props) => {
  }
  
  
+ 
    };
   
     return (
   <>
- 
-<MuiPickersUtilsProvider className=' justify-content-center mx-auto' utils={DateFnsUtils}>
+ <div className='col-6 mx-auto'>
+<MuiPickersUtilsProvider className='mx-auto' utils={DateFnsUtils}>
 
 <KeyboardDatePicker
+clearable
         placeholder="2018/10/10"
         value={selectedDate}
         onChange={date => handleDateChange(date)}
@@ -58,9 +61,13 @@ const TargetDate =(props) => {
   
 </MuiPickersUtilsProvider>
 
+</div>
+<br></br>
+<br></br>
 
-<p id="selected-date" className="text-center"></p>
+<p id="selected-date" className="text-center font-weight-bold"></p>
 <p id="time-until" className= "text-center"></p> 
+
           
           <br></br>
 <Implementation selectedDate={selectedDate}/>

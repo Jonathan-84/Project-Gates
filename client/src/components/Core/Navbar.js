@@ -1,16 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 //import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import Auth from '../utils/auth';
-import Logo from '../images/Logo.PNG'
-
+import Auth from '../../utils/auth';
+import Logo from '../../images/Logo.PNG';
+import { GET_ME } from '../../utils/queries';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/react-hooks';
 
 
 
 
 function AppNavbar(){
    
+    const { username: userParam } = useParams();
   
+    const { loading, data } = useQuery(GET_ME, {
+      variables: { username: userParam }
+    });
+  
+    const me = data?.me || {};
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <>
         <div className="jumbotron jumbotron-fluid bg-warning pb-4 pt-1">
@@ -18,6 +31,7 @@ function AppNavbar(){
    
     <img className="img-fluid w-25 h-25" src={Logo} alt="Initial Logo" />
       <h3 className=" lead d-none d-md-block">Your Acqusition Deadline Co-Pilot</h3>
+
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
         <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,6 +48,7 @@ function AppNavbar(){
                   <Link to="/fromNow" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">From Now</Link>
                   <Link to="/Future" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">Look Ahead</Link>
                   <br />
+                  <p className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold">{me.username}</p>
                   <Link to="/" onClick={Auth.logout}className="link-text text-dark rounded border border-dark p-2 m-3 bg-white fw-bold main-link">Logout</Link>
                 </>
               ) : (

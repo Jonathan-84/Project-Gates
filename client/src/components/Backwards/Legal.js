@@ -47,7 +47,7 @@ const afterImpl= this.props.newDate;
         }
         else {
       //$("#time-until2").text(timeUntil + " Days");
-      $("#LR-deadline").text(' Your Deadline for starting the Implementation: ' +  minusLR);
+      $("#LR-deadline").text(' Your Deadline for having the Legal Review completed: ' +  minusLR);
      
       //return ImplBuffer;
       event.preventDefault();

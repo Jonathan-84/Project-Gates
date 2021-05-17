@@ -1,7 +1,7 @@
 import React from 'react';
 //import Systac from '../components/Systac';
 //import Implementation from '../components/Implementation';
-import TargetDate from '../components/TargetDate';
+import TargetDate from '../components/Backwards/TargetDate';
 
 // POst dem day deployment, unblock implementation. 
 // Path starts here, then goes to Systac to unblock the functionality
@@ -30,7 +30,6 @@ function Future(){
         <div className="App mx-auto">
 <br></br>
         <section className='vh-100'>
-        {/*<Systac></Systac>*/}
         <TargetDate></TargetDate>
       </section>
     </div>

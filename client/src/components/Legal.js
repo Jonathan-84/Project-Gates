@@ -1,89 +1,94 @@
 import $ from 'jquery';
 import moment from 'moment';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
-import React, {useState} from 'react';
-//import selectedDate from "../components/Datepicker";
+//import Form from 'react-bootstrap/Form';
+import React, {Component} from 'react';
 
 
 
-const Legal = (props)=> {
+class Legal extends Component {
+ 
+
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+  }
+
   
-const implDeadline = props.implDeadline
-console.log (implDeadline)
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
 
-///now properly pulls the selected Date--- need to get it to work with the moment math
+  handleSubmit(event) {
+const selectedLR = this.state.value;
+//alert(selectedLR)
+
+const afterImpl= this.props.newDate;
+//alert(afterImpl)
 
 
-
-    const [selectedLegal, setSelectedLegal] = useState('');
-
-    const handleLegal =(e)=> {
-        setSelectedLegal(e);
-      console.log(selectedLegal)
 
       //this capability now works- using Momentjs it subtracts the dropdown select from the date picker selection.
-    let minusLegalReview = moment(implDeadline).subtract(selectedLegal, 'days').format('MM/DD/YYYY');
-    $("#legal-deadline").text(' Your Deadline for completing Legal Review: ' +  minusLegalReview);
-
-  const convertedLReview= moment(minusLegalReview, 'MM/DD/YYYY')
-
-   const LRBuffer = convertedLReview.diff(moment(), 'days');
-    console.log(LRBuffer);
-      if (LRBuffer < 0) {
-        alert("We can't do it Captain! We need more time!");
-      }
-      else {
-    //$("#time-until2").text(timeUntil + " Days");
-    console.log(LRBuffer);
-    return LRBuffer;
-      }
-    }
-    
-
-
-        return (
-            <>
-            <p className="text-center">How long is the Legal Review?</p>
-            <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center'>
-         
-            <DropdownButton
-      alignRight
-      title="Legal Review Length"
-      id="dropdown-menu-align-right"
-      onSelect={handleLegal}
-    
-        >
-              <Dropdown.Item eventKey="14">2 Weeks</Dropdown.Item>
-              <Dropdown.Item eventKey="30">1 Month</Dropdown.Item>
-              <Dropdown.Item eventKey="60">2 Months</Dropdown.Item>
-              <Dropdown.Item eventKey="90">3 Months</Dropdown.Item>
-              <Dropdown.Item eventKey="180">6 Months</Dropdown.Item>
-
-      </DropdownButton>
+      let minusLR = moment(afterImpl).subtract(selectedLR, 'days').format('MM/DD/YYYY');
+      //alert(minusLR)
   
-     {/* <h4> You Selected {selectedOption}</h4>
+    const convertedImpl= moment(minusLR, 'MM/DD/YYYY')
+    //setImplDeadline(convertedImpl)
+  
+  
+     const legalBuffer = convertedImpl.diff(moment(), 'days');
+  // alert(legalBuffer);
+        if
+        (legalBuffer < 0) {
+          alert("We can't do it Captain! We need more time!");
+        }
+        else {
+      //$("#time-until2").text(timeUntil + " Days");
+      $("#LR-deadline").text(' Your Deadline for starting the Implementation: ' +  minusLR);
+     
+      //return ImplBuffer;
+      event.preventDefault();
+
+  }
+  }
+
+
+  render() {
+
+
+    return (
+      <>
+            <p className="text-center">How long is the Legal Review?</p>
          
-                <select value={selectedOption} defaultValue={selectedOption} onChange= {(event) => handleSubmit(event.target.value)}>
-                <option value="0"></option>
-                  <option value="30">1 Month</option>
-                  <option value="60">2 Months</option>
-                  <option value="90">3 Months</option>
-                  <option value="180">6 Months</option>
-                  <option value="270">9 Months</option>
-                </select>
-          
-         <input type="submit" value="Submit" />*/}
-            </form>
+      <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center' onSubmit={this.handleSubmit}>
+        <label>
+          <select value={this.state.value} onChange={this.handleChange} className="border border-warning">
+          <option value="0"></option>
+          <option value="14">2 Weeks</option>
+            <option value="30">1 Month</option>
+            <option value="60">2 Months</option>
+            <option value="90">3 Months</option>
+            <option value="180">6 Months</option>
+           
+          </select>
+        </label>
+        <input type="submit" className="bg-warning" value="Submit" />
+      </form>
+      
+      <div className="col mx=auto justify-content-center">
+      <p className="text-center font-weight-bold" id='LR-deadline'></p>
+                </div>
+      <br></br>
 
-          <div className="col">
-            <p className="text-center font-weight-bold" id='legal-deadline'></p>
-              </div>
-              <br></br>
-              </>
-          );
 
-};
+            
+      </>
+    );
+}
+}
 
-
-export default Legal
+export default Legal;
+    

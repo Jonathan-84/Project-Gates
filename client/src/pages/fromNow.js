@@ -62,7 +62,7 @@ var currentDate1 = moment().format('MM/DD/YYYY');
          <br />
       <form className='row justify-content-around d-flex flex-column flex-lg-row align-content-center' onSubmit={this.handleSubmit}>
         <label>
-          <select value={this.state.value} onChange={this.handleChange}>
+          <select value={this.state.value} onChange={this.handleChange} className="border border-warning">
           <option value="0"></option>
             <option value="30">1 Month</option>
             <option value="60">2 Months</option>
@@ -71,7 +71,7 @@ var currentDate1 = moment().format('MM/DD/YYYY');
             <option value="270">9 Months</option>
           </select>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" className="bg-warning" value="Submit" />
       </form>
       <br/>
       <div className="col mx=auto justify-content-center">

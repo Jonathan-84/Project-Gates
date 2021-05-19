@@ -9,10 +9,11 @@ import Login from './components/Core/LoginForm';
 import Signup from './components/Core/SignupForm';
 import Home from './pages/home'
 import fromNow from './pages/fromNow';
+import Welcome from './pages/Welcome';
 //import Systac from './pages/Systac';
 //import Implementation from '../components/Implementation';
 import Future from './pages/Future';
-import Auth from './utils/auth'
+import Auth from './utils/auth';
 
 import ProtectedRoute from './components/Core/ProtectedRoute'
 
@@ -42,6 +43,7 @@ const App = () => {
         <Navbar />
         <Switch>
             <Route exact path="/" component={Home} />
+            <ProtectedRoute exact path="/Welcome" component={Welcome} auth={Auth.loggedIn()} />
             <ProtectedRoute exact path="/fromNow" component={fromNow} auth={Auth.loggedIn()} />
             <ProtectedRoute exact path="/Future" component={Future} auth={Auth.loggedIn()} />
             <Route exact path="/login" component={Login} />

@@ -24,6 +24,7 @@ module.exports = {
       return res.status(400).json({ message: 'Something is wrong!' });
     }
     const token = signToken(user);
+    send();
     res.json({ token, user });
   },
   // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)

@@ -1,6 +1,7 @@
 // Import Models
 const { User } = require('../models')
 
+
 // Automatically Relay Errors to Client
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -24,8 +25,9 @@ const resolvers = {
         addUser: async (parent, args) => {
             const user = await User.create(args);
             const token = signToken(user);
-          
+            
             return { token, user };
+
           },
           login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });

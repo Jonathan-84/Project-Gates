@@ -16,7 +16,7 @@ function AppNavbar(){
     <div className="container">
    
     <img className="img-fluid w-25 h-25" src={Logo} alt="Initial Logo" />
-      <h3 className=" lead d-none d-md-block">Your Acquisition Co-Pilot</h3>
+      <h3 className=" lead d-none d-md-block">Your Sales Deadline Co-Pilot</h3>
 
     <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">

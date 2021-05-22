@@ -29,10 +29,7 @@ const resolvers = {
             return { token, user };
 
           },
-          deleteUser: async(parent, {email}) => {
-            const user= await User.findOne({email});
-            
-          },
+    
           login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
           

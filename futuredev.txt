@@ -4,3 +4,5 @@ add ability to send welcome email upon signup
 add ability to change or recover password
 add the ability to delete users
 add integration with calendars or CRMS
+
+Lookinto sign in with Apple, with Google, with Microsoft, 

@@ -46,9 +46,9 @@ const afterImpl= this.props.newDate;
           alert("We can't do it Captain! We need more time!");
         }
         else {
-          alert( "You only have a " + legalBuffer + " Day(s) Buffer")
+          
       $("#LR-deadline").text(' Your Deadline for having the Legal Review completed: ' +  minusLR);
-     
+      alert( "You only have " + legalBuffer + " Day(s) To Spare")
       //return ImplBuffer;
       event.preventDefault();
 

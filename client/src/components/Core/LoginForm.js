@@ -94,14 +94,21 @@ const Login = () => {
           variant='warning'>
           Submit
         </Button>
+        <br></br>
+<br>
+      </br>
       </Form>
-
       </div>
       <div className='d-flex mx-auto w-50 '>
       <p className="center">Oops, not a member yet? Sign Up Here!<br/><Link to="/signup" className="add-padding link-text bold-text">Create an Account</Link></p>
       
       </div>
-      
+      <br>
+      </br>
+      <br>
+      </br>
+      <br>
+      </br>
     </>
   );
 };

@@ -1,0 +1,6 @@
+Key pieces that I'd like to update or fix:
+change header color for the datepicker
+add ability to send welcome email upon signup
+add ability to change or recover password
+add the ability to delete users
+add integration with calendars or CRMS

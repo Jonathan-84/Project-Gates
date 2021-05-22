@@ -43,5 +43,29 @@ module.exports = {
     const token = signToken(user);
     res.json({ token, user });
   },
-  
+  /*
+  async updateUser({ params, body }, res) {
+    const update = await User.findOneAndUpdate({ _id: body.id }, {email: body.email}, { new: true })
+    .then(dbUserData => {
+        if (!dbUserData) {
+        res.status(404).json({ message: 'No User found with this id!' });
+        return;
+        }
+        res.json(dbUserData);
+    })
+    .catch(err => res.status(400).json(err));
+},*/
+
+async deleteUser({ params }, res) {
+  const user = await User.findOneAndDelete({ _id: params.id })
+  .then(dbUserData => {
+      if (!dbUserData) {
+      res.status(404).json({ message: 'No User found with this id!' });
+      return;
+      }
+      res.json(dbUserData);
+  })
+  .catch(err => res.status(400).json(err));
+},
+
 };

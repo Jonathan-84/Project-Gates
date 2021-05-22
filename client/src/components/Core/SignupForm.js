@@ -64,6 +64,16 @@ const Signup = () => {
     return (
         <>
         {/* This is needed for the validation functionality above */}
+        <div className='d-flex mx-auto w-50 border border-danger '>
+            <div>
+                <div className='p-2'>
+                <p className="font-weight-bold text-justify">Alert: <span className="font-weight-normal">Password Resets and Password Recovery are not 
+                available. Depending on application adoption, it will be included in future development. So please take 
+                great care to save your Password.</span> </p>
+                </div>
+            </div>
+        </div>
+        <br></br>
         <div className='d-flex mx-auto w-50 '>
         <Form className='w-50' noValidate validated={validated} onSubmit={handleFormSubmit}>
             {/* show alert if server response is bad */}
@@ -115,13 +125,18 @@ const Signup = () => {
             variant='warning'>
                 Submit
             </Button>
+         
             </Form>
             </div>
 
             <div className='d-flex mx-auto w-50 '>
             <p className="center">Already have an account with us?<br /><Link to="/login" className="add-padding link-text bold-text">Login to your account</Link></p>
             </div>
-        
+            <br></br>
+<br>
+      </br><br></br>
+<br>
+      </br>
     </>
 );
 };

@@ -117,11 +117,11 @@ const Signup = () => {
             </Button>
             </Form>
             </div>
-
+            
             <div className='d-flex mx-auto w-50 '>
             <p className="center">Already have an account with us?<br /><Link to="/login" className="add-padding link-text bold-text">Login to your account</Link></p>
             </div>
-        
+            
     </>
 );
 };

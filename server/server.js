@@ -2,7 +2,7 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
 
-var enforce = require('express-sslify');
+const redirectSSL = require('redirect-ssl')
 
 const path = require("path");
 const db = require("./config/connection");
@@ -13,10 +13,7 @@ const { typeDefs, resolvers } = require("./schemas");
 
 
 const app = express();
-
-// Use enforce.HTTPS({ trustProtoHeader: true }) in case you are behind
-// a load balancer (e.g. Heroku). See further comments below
-app.use(enforce.HTTPS());
+app.use(redirectSSL)
  
 const PORT = process.env.PORT || 3001;
 //console.log(process.env.NODE_ENV);

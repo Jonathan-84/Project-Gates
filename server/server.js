@@ -9,9 +9,12 @@ const db = require("./config/connection");
 
 const { typeDefs, resolvers } = require("./schemas");
 
-
+import sslRedirect from 'heroku-ssl-redirect';
 
 const app = express();
+
+// enable ssl redirect
+app.use(sslRedirect());
 
 const PORT = process.env.PORT || 3001;
 //console.log(process.env.NODE_ENV);

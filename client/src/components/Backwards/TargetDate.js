@@ -13,8 +13,9 @@ import DateFnsUtils from '@date-io/date-fns';
 /// Unblock Implementation- seeing if the click works better using the value testImpl sample
 //import Implementation from './Implementation';
 import Implementation from './Implementation.js';
-
-
+import { ThemeProvider } from 'react-bootstrap';
+import yellow from "@material-ui/core/colors/lime";
+import { createMuiTheme } from "@material-ui/core";
 
 
 var now = moment(new Date());
@@ -22,6 +23,12 @@ var now = moment(new Date());
 
 
 const TargetDate =(props) => {
+
+  const defaultMaterialTheme = createMuiTheme({
+    palette: {
+      primary: yellow,
+    },
+  });
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -52,7 +59,7 @@ const TargetDate =(props) => {
     return (
   <>
  <div className='col-6 mx-auto'>
- 
+ <ThemeProvider theme={defaultMaterialTheme}>
 <MuiPickersUtilsProvider className='mx-auto' utils={DateFnsUtils}>
 
 <KeyboardDatePicker
@@ -64,7 +71,7 @@ clearable
       />
   
 </MuiPickersUtilsProvider>
-
+</ThemeProvider>
 
 </div>
 <br></br>

@@ -17,39 +17,49 @@ function AppNavbar(){
    
     <img className="img-fluid w-25 h-25" src={Logo} alt="Initial Logo" />
       <h3 className=" lead d-none d-md-block">Your Sales Deadline Co-Pilot</h3>
-
     <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="container-fluid">
-        <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
-            <div className="collapse navbar-collapse pt-3" id="navbarTogglerDemo01">
+            <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav ml-auto">
-                    <li className='d-flex flex-sm-wrap'>
-                        <Link to="/" className="link-text text-dark m-3 p-2 border border-dark rounded bg-white fw-bold main-link">Home</Link>
-                    
+                    <li className='nav-item active'>
+                        <Link to="/" className="link-text m-3  text-dark font-weight-bold fw-bold main-link">Home</Link>
+                        </li>
          {/*This is where the COnditional was added for the Nav*/}
                     {Auth.loggedIn() ? (
                 <>
-                  <Link to="/fromNow" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">From Today</Link>
-                  <Link to="/Future" className="link-text text-dark m-3 p-2 bg-white border border-dark rounded fw-bold  main-link">Deadlines</Link>
+                <li className='nav-item active'>
+                  <Link to="/fromNow" className="link-text text-dark m-3 font-weight-bold main-link">From Today</Link>
+                  </li>
+                  <li className='nav-item active'>
+                  <Link to="/Future" className="link-text text-dark m-3 font-weight-bold  main-link">Deadlines</Link>
+                  </li>
                   <br />
-                  <Link to="/" onClick={Auth.logout}className="link-text text-dark rounded border border-dark p-2 m-3 bg-white fw-bold main-link">Logout</Link>
+                  <li className='nav-item active'>
+                  <Link to="/" onClick={Auth.logout}className="link-text text-dark m-3 font-weight-bold main-link">Logout</Link>
+                  </li>
                 </>
               ) : (
                 <>
-                <Link to="/login" className="link-text text-dark fw-bold m-3 border border-dark p-2 bg-white rounded add-padding main-link">Log in</Link>
-                <Link to="/signup" className="link-text text-dark fw-bold m-3 border border-dark p-2 bg-white rounded add-padding main-link"> Sign Up</Link>
+                
+                <li className='nav-item active'>
+                <Link to="/login" className="link-text text-dark font-weight-bold m-3 add-padding main-link">Log in</Link>
+                </li>
+                <li className='nav-item active'>
+                <Link to="/signup" className="link-text text-dark font-weight-bold m-3 add-padding main-link"> Sign Up</Link>
+                </li>
                 </>
               )}
-                </li>
+                
                 </ul>
             </div>
             
-        </div>
+        
     </nav>
     </div>
     </div>
+
       </>
       
     );

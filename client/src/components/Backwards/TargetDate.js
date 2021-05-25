@@ -14,7 +14,7 @@ import DateFnsUtils from '@date-io/date-fns';
 //import Implementation from './Implementation';
 import Implementation from './Implementation.js';
 import { ThemeProvider } from 'react-bootstrap';
-import yellow from "@material-ui/core/colors/lime";
+import lightBlue from "@material-ui/core/colors/lime";
 import { createMuiTheme } from "@material-ui/core";
 
 
@@ -24,9 +24,38 @@ var now = moment(new Date());
 
 const TargetDate =(props) => {
 
-  const defaultMaterialTheme = createMuiTheme({
-    palette: {
-      primary: yellow,
+  const materialTheme = createMuiTheme({
+    overrides: {
+      MuiPickersToolbar: {
+        toolbar: {
+          backgroundColor: lightBlue.A200,
+        },
+      },
+      MuiPickersCalendarHeader: {
+        switchHeader: {
+          // backgroundColor: lightBlue.A200,
+          // color: "white",
+        },
+      },
+      MuiPickersDay: {
+        day: {
+          color: lightBlue.A700,
+        },
+        daySelected: {
+          backgroundColor: lightBlue["400"],
+        },
+        dayDisabled: {
+          color: lightBlue["100"],
+        },
+        current: {
+          color: lightBlue["900"],
+        },
+      },
+      MuiPickersModal: {
+        dialogAction: {
+          color: lightBlue["400"],
+        },
+      },
     },
   });
 
@@ -59,7 +88,8 @@ const TargetDate =(props) => {
     return (
   <>
  <div className='col-6 mx-auto'>
- <ThemeProvider theme={defaultMaterialTheme}>
+
+<ThemeProvider theme={materialTheme}>
 <MuiPickersUtilsProvider className='mx-auto' utils={DateFnsUtils}>
 
 <KeyboardDatePicker

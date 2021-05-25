@@ -13,6 +13,7 @@ import Welcome from './pages/Welcome';
 //import Systac from './pages/Systac';
 //import Implementation from '../components/Implementation';
 import Future from './pages/Future';
+import Planning from './pages/Planning';
 import Auth from './utils/auth';
 
 import ProtectedRoute from './components/Core/ProtectedRoute'
@@ -46,6 +47,7 @@ const App = () => {
             <ProtectedRoute exact path="/Welcome" component={Welcome} auth={Auth.loggedIn()} />
             <ProtectedRoute exact path="/fromNow" component={fromNow} auth={Auth.loggedIn()} />
             <ProtectedRoute exact path="/Future" component={Future} auth={Auth.loggedIn()} />
+            <ProtectedRoute exact path="/Planning" component={Planning} auth={Auth.loggedIn()} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
  

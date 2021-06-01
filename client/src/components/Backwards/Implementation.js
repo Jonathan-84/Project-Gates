@@ -88,6 +88,7 @@ const startDate= this.props.selectedDate;
       <p className="text-center font-weight-bold" id='impl-deadline'></p>
                 </div>
       <br></br>
+   
       <Legal {...this.state}/>
 
 

@@ -35,9 +35,9 @@ function AppNavbar(){
                   <li className='nav-item active'>
                   <Link to="/Future" className="link-text text-dark m-3 font-weight-bold  main-link">Deadlines</Link>
                   </li>
-                  <li className='nav-item active'>
+                 {/* <li className='nav-item active'>
                   <Link to="/Planning" className="link-text text-dark m-3 font-weight-bold  main-link">Planning</Link>
-                  </li>
+                    </li>*/}
                   <br />
                   <li className='nav-item active'>
                   <Link to="/" onClick={Auth.logout}className="link-text text-dark m-3 font-weight-bold main-link">Logout</Link>

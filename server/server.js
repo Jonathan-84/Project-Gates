@@ -1,8 +1,8 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
-
-const redirectSSL = require('redirect-ssl')
+//removed to get login to work offline
+//const redirectSSL = require('redirect-ssl')
 
 const path = require("path");
 const db = require("./config/connection");
@@ -13,7 +13,8 @@ const { typeDefs, resolvers } = require("./schemas");
 
 
 const app = express();
-app.use(redirectSSL)
+//removed to get login to work offline
+//app.use(redirectSSL)
  
 const PORT = process.env.PORT || 3001;
 //console.log(process.env.NODE_ENV);

@@ -31,7 +31,7 @@ function Planning(){
         
 <br></br>
         <section className='vh-100'>
-     {/*   <PhaseOne></PhaseOne> */}
+        <PhaseOne></PhaseOne> 
       </section>
       </>
     );

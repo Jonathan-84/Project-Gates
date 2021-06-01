@@ -9,7 +9,7 @@ function Footer() {
 
   <Nav className="footer d-flex justify-content-between bg-dark fixed-bottom mx-auto p-2">
      <Nav.Item>
-    <Nav.Link className="text-warning font-weight-bold"  target="_blank">Exley ©️ 2021  </Nav.Link>
+    <Nav.Link className="text-warning font-weight-bold"  target="_blank">Exley ©️ 2021 All Rights Reserved.  </Nav.Link>
   </Nav.Item>
  {/* <Nav.Item>
     <Nav.Link className="text-dark" href="https://github.com/Jonathan-84" target="_blank">GitHub</Nav.Link>

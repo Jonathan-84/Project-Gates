@@ -24,7 +24,6 @@ const Home = () => {
         <img className="img-fluid rounded border border-info " src={fromNow} alt="fromNow feature" />
         </div>
         <div class="col-sm d-flex align-items-center">
-          <div className="row">
         
           <p> Using the <span className="font-weight-bold">From Today</span> feature, you could project the earliest day that the solution would be implemented,
             if an agreement was signed today.
@@ -56,7 +55,6 @@ const Home = () => {
             Whether they are RFPs or the actual Implementation Process, this tool will help. It gives you the ability to build out 
             multiple deadlines from today.
           </p>
-        </div>
         </div>
         <br></br>
         <br></br>

@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Core/Navbar';
 import Footer from './components/Core/Footer';
 import Login from './components/Core/LoginForm';
+import Demo from './components/Core/DemoLogin';
 import Signup from './components/Core/SignupForm';
 import Home from './pages/home'
 import fromNow from './pages/fromNow';
@@ -47,6 +48,7 @@ const App = () => {
             <ProtectedRoute exact path="/fromNow" component={fromNow} auth={Auth.loggedIn()} />
             <ProtectedRoute exact path="/Future" component={Future} auth={Auth.loggedIn()} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/demo" component={Demo} />
             <Route exact path="/signup" component={Signup} />
  
       

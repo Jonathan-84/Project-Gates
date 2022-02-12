@@ -16,7 +16,7 @@ function Footer() {
  </Nav.Item>*/}
  <div className="d-flex justify-content-end">
   <Nav.Item>
-    <Nav.Link className="text-warning" href="https://www.linkedin.com/company/exley-deadlines" target="_blank">LinkedIn</Nav.Link>
+    <Nav.Link className="text-warning" href="www.linkedin.com/in/jrob84" target="_blank">LinkedIn</Nav.Link>
   </Nav.Item>
   <Nav.Item>
     <Nav.Link className="text-warning" href = "mailto:exley.deadlines@outlook.com?subject = Feedback&body = Message">Contact Exley</Nav.Link>

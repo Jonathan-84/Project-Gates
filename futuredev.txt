@@ -6,3 +6,6 @@ add the ability to delete users
 add integration with calendars or CRMS
 
 Lookinto sign in with Apple, with Google, with Microsoft, 
+
+recent tested changes to fix heroku deployment issues, which are new.
+(move to node version 16x and "npm i core-js"   /// "heroku update")

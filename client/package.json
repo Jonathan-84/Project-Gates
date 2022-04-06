@@ -16,7 +16,7 @@
     "bootstrap": "^4.6.0",
     "date-fns": "^2.21.1",
     "graphql": "^15.5.0",
-    "graphql-tag": "^2.12.3",
+    "graphql-tag": "^2.11.0",
     "jquery": "^3.6.0",
     "jwt-decode": "^2.2.0",
     "moment": "^2.29.1",

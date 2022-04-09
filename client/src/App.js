@@ -48,7 +48,7 @@ const App = () => {
             <ProtectedRoute exact path="/fromNow" component={fromNow} auth={Auth.loggedIn()} />
             <ProtectedRoute exact path="/Future" component={Future} auth={Auth.loggedIn()} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/demo" component={Demo} />
+            <Route exact path="/👽" component={Demo} />
             <Route exact path="/signup" component={Signup} />
  
       

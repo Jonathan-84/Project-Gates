@@ -29,12 +29,25 @@ function AppNavbar(){
          {/*This is where the COnditional was added for the Nav*/}
                     {Auth.loggedIn() ? (
                 <>
-                <li className='nav-item active'>
+                        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+          <li className='nav-item active'>
                   <Link to="/fromNow" className="link-text text-dark m-3 font-weight-bold main-link">From Today</Link>
                   </li>
                   <li className='nav-item active'>
                   <Link to="/Future" className="link-text text-dark m-3 font-weight-bold  main-link">Deadlines</Link>
                   </li>
+          </ul>
+        </li>
+                {/* <li className='nav-item active'>
+                  <Link to="/fromNow" className="link-text text-dark m-3 font-weight-bold main-link">From Today</Link>
+                  </li>
+                  <li className='nav-item active'>
+                  <Link to="/Future" className="link-text text-dark m-3 font-weight-bold  main-link">Deadlines</Link>
+                  </li> */}
                   <br />
                   <li className='nav-item active'>
                   <Link to="/" onClick={Auth.logout}className="link-text text-dark m-3 font-weight-bold main-link">Logout</Link>

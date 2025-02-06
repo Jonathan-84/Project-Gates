@@ -20,7 +20,7 @@
         "express": "^4.17.1",
         "graphql": "^15.5.0",
         "jsonwebtoken": "^9.0.0",
-        "mongoose": "^6.13.5",
+        "mongoose": "^5.12.3",
         "nodemailer": "^6.6.0",
         "nodemon": "^2.0.7"
     }
